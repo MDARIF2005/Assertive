@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "442202625058",
+    "firebase_url": "https://assistive-6beaf-default-rtdb.firebaseio.com",
+    "project_id": "assistive-6beaf",
+    "storage_bucket": "assistive-6beaf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442202625058:android:cc3bc6f7d6118cdd69267b",
+        "android_client_info": {
+          "package_name": "com.example.assertive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442202625058-s00kvkqbel1beh6f0r62bbia78sp4ld4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNkir5LDmjj36SOeYsHtiimsZMVbN-7RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442202625058-s00kvkqbel1beh6f0r62bbia78sp4ld4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

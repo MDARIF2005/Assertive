@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.assertive.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.assertive.ui.profile.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_editprofile"
+        android:label="editprofile"
+        tools:layout="@layout/fragment_editprofile" />
+    <fragment
+        android:id="@+id/nav_manage_collection"
+        android:name="com.example.assertive.ui.collection.Manage_collection"
+        android:label="managecollection"
+        tools:layout="@layout/fragment_managecollection" />
+    <fragment
+        android:id="@+id/nav_addcollection"
+        android:name="com.example.assertive.ui.collection.Manage_collection"
+        android:label="addcollection"
+        tools:layout="@layout/dialog_add_collection" />
+
+    <fragment
+        android:id="@+id/nav_additem"
+        android:name="com.example.assertive.ui.collection.Manage_collection"
+        android:label="additem"
+        tools:layout="@layout/dialog_add_item" />
+    <fragment
+        android:id="@+id/nav_updatecollection"
+        android:name="com.example.assertive.ui.collection.Manage_collection"
+        android:label="updateitem"
+        tools:layout="@layout/dialog_update_collection" />
+
+
+
+
+
+
+</navigation>

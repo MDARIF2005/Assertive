@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_medium">#9E9E9E</color>
+    <color name="gray_dark">#616161</color>
+
+    <!-- Primary Theme Colors -->
+    <color name="primaryColor">#6200EE</color>
+    <color name="primaryDarkColor">#3700B3</color>
+    <color name="primaryLightColor">#BB86FC</color>
+    <color name="accentColor">#03DAC5</color>
+
+    <!-- Background Colors -->
+    <color name="backgroundLight">#F8F9FA</color>
+    <color name="backgroundDark">#121212</color>
+    <color name="backgroundSoft">#ECEFF1</color>
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textWhite">#FFFFFF</color>
+    <color name="textHint">#BDBDBD</color>
+
+    <!-- Button Colors -->
+    <color name="buttonColor">#FF5722</color>
+    <color name="buttonPressed">#E64A19</color>
+    <color name="buttonDisabled">#BDBDBD</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+
+    <!-- Card & RecyclerView Item Colors -->
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="cardBorder">#DDDDDD</color>
+    <color name="cardShadow">#B0BEC5</color>
+
+    <!-- Collection Colors -->
+    <color name="collectionBackground">#E3F2FD</color>
+    <color name="collectionText">#1565C0</color>
+
+    <!-- Item Colors -->
+    <color name="itemBackground">#FFF3E0</color>
+    <color name="itemText">#E65100</color>
+
+    <!-- Pastel Colors -->
+    <color name="pastelBlue">#A7C7E7</color>
+    <color name="pastelGreen">#A8E6CF</color>
+    <color name="pastelYellow">#FFD97D</color>
+    <color name="pastelPink">#FFABAB</color>
+    <color name="pastelPurple">#D5AAFF</color>
+
+    <!-- Success, Warning, and Error Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFEB3B</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Additional Blue Shades -->
+    <color name="blue_light">#BBDEFB</color>
+    <color name="blue_medium">#64B5F6</color>
+    <color name="blue_dark">#1976D2</color>
+
+    <!-- Additional Green Shades -->
+    <color name="green_light">#A5D6A7</color>
+    <color name="green_medium">#66BB6A</color>
+    <color name="green_dark">#2E7D32</color>
+
+    <!-- Additional Red Shades -->
+    <color name="red_light">#EF9A9A</color>
+    <color name="red_medium">#E57373</color>
+    <color name="red_dark">#D32F2F</color>
+
+    <!-- Additional Orange Shades -->
+    <color name="orange_light">#FFCC80</color>
+    <color name="orange_medium">#FFA726</color>
+    <color name="orange_dark">#E65100</color>
+
+    <!-- Additional Purple Shades -->
+    <color name="purple_light">#CE93D8</color>
+    <color name="purple_medium">#BA68C8</color>
+    <color name="purple_dark">#8E24AA</color>
+    <color name="lavender">#E6E6FA</color>
+    sources>
+    <!-- Add the missing color definitions for dark theme-->
+    <color name="gray_400">#9E9E9E</color>  <!-- Example: medium gray (darker) -->
+    <color name="light_blue_400">#81D4FA</color><!-- Example: light blue (lighter) -->
+    <color name="gray_600">#E0E0E0</color>  <!-- Example: lighter gray -->
+    <color name="light_blue_600">#4FC3F7</color>
+
+    <color name="primary">#6200EE</color>  <!-- Example color value -->
+<!-- Other color definitions -->
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:layout_margin="20dp"
+    android:clipToOutline="true">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Item"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingBottom="12dp"/>
+
+    <!-- Item Name Input -->
+    <EditText
+        android:id="@+id/etItemName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Item Name"
+        android:inputType="text"
+        android:background="@android:drawable/edit_text"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"/>
+
+
+    <!-- Image Selection Button -->
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Change Image"
+        android:textSize="16sp"
+        android:backgroundTint="@color/gray_medium"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Image Preview -->
+    <ImageView
+        android:id="@+id/ivItemImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Update Button -->
+    <Button
+        android:id="@+id/btnUpdateItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Update Item"
+        android:textSize="16sp"
+        android:backgroundTint="@color/blue_dark"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

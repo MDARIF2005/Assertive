@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:layout_margin="20dp"
+    android:clipToOutline="true">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Item"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingBottom="12dp"/>
+
+    <!-- Item Name Input -->
+    <EditText
+        android:id="@+id/etItemName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Item Name"
+        android:inputType="text"
+        android:background="@android:drawable/edit_text"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"/>
+
+
+
+    <!-- Selected Collection (Read-Only) -->
+    <TextView
+        android:id="@+id/tvSelectedFolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Collection: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Image Selection Button -->
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Select Image"
+        android:textSize="16sp"
+        android:backgroundTint="@color/gray_medium"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Image Preview -->
+    <ImageView
+        android:id="@+id/ivItemImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Save Item"
+        android:textSize="16sp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:id="@+id/add_item_cancle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="cancle"
+        android:textSize="16sp"
+        android:backgroundTint="@color/red_dark"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
