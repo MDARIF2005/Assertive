@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.assertive.DatabaseHelper;
+import com.example.assertive.ImageUtils;
 import com.example.assertive.R;
 import com.example.assertive.ui.models.CollectionModel;
 import com.example.assertive.ui.models.ItemModel;
@@ -192,6 +193,7 @@ public class Manage_collection extends Fragment {
         ImageView ivCollectionImage = dialogView.findViewById(R.id.ivCollectionImage);
         Button btnSelectImage = dialogView.findViewById(R.id.btnSelectImage);
         Button btnSave = dialogView.findViewById(R.id.btnSaveCollection);
+        Button cancle = dialogView.findViewById(R.id.add_collection_cancle);
 
         final byte[][] imageBytesHolder = new byte[1][];
 
@@ -215,6 +217,8 @@ public class Manage_collection extends Fragment {
                 Toast.makeText(getContext(), "Please enter a name ", Toast.LENGTH_SHORT).show();
             }
         });
+        cancle.setOnClickListener(v -> dialog.dismiss());
+
 
         dialog.show();
     }
@@ -234,6 +238,7 @@ public class Manage_collection extends Fragment {
                 byte[] bytes = getBytesFromBitmap(bitmap);
                 if (imageSelectCallback != null) {
                     imageSelectCallback.onImageSelected(bitmap, bytes);
+                    imageSelectCallback = null; // 🔥 Important: clear it after use to avoid conflicts
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -241,9 +246,10 @@ public class Manage_collection extends Fragment {
         }
     }
 
+
     private byte[] getBytesFromBitmap(Bitmap bitmap) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream);
         return stream.toByteArray();
     }
 
@@ -287,6 +293,7 @@ public class Manage_collection extends Fragment {
             String name = etItemName.getText().toString().trim();
 
             if (!name.isEmpty() ) {
+
                 dbHelper.addItem(name, name, selectedImageBytes[0], currentCollectionName);
                 showItems(currentCollectionName);
                 dialog.dismiss();
@@ -317,8 +324,10 @@ public class Manage_collection extends Fragment {
          // Set existing value if available
 
         if (item.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(item.getImage(), 0, item.getImage().length);
+            Bitmap bitmap = ImageUtils.getDownsampledBitmap(item.getImage(), 200, 200); // adjust size as needed
             ivItemImage.setImageBitmap(bitmap);
+        } else {
+            ivItemImage.setImageResource(R.drawable.folder); // Optional fallback image
         }
 
         final byte[][] updatedImageBytes = {item.getImage()}; // Store current image bytes
@@ -366,7 +375,7 @@ public class Manage_collection extends Fragment {
 
         // Pre-fill collection details
         etCollectionName.setText(collection.getName());
-        Bitmap bitmap = BitmapFactory.decodeByteArray(collection.getImage(), 0, collection.getImage().length);
+        Bitmap bitmap = ImageUtils.getDownsampledBitmap(collection.getImage(), 200, 200); // adjust size as needed
         ivCollectionImage.setImageBitmap(bitmap);
 
         final byte[][] updatedImageBytes = {collection.getImage()}; // Store the current image bytes

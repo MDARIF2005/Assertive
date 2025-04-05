@@ -43,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE users( user_id TEXT PRIMARY KEY, username TEXT , DOB TEXT, email TEXT, gender TEXT)");
         db.execSQL("CREATE TABLE Collection(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, Image BLOB)");
-        db.execSQL("CREATE TABLE item(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, value TEXT, image BLOB, folder_id text, FOREIGN KEY(folder_id) REFERENCES Collection(name))");
+        db.execSQL("CREATE TABLE item(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, value TEXT, image BLOB, folder_id text, FOREIGN KEY(folder_id) REFERENCES Collection(name) ON DELETE CASCADE)");
     }
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -169,12 +169,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean updateCollection(int id ,String name,byte[] img){
          SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id", id);
         contentValues.put("name", name);
         contentValues.put("Image", img);
         int result = db.update("Collection", contentValues, "id=?", new String[]{String.valueOf(id)});
         db.close();
-        return result !=1;
+        return result ==1;
 
     }
 
@@ -190,17 +189,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM Collection", null);
     }
-    public String getUserId() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT user_id FROM users WHERE logged_in = 1", null);
 
-        if (cursor != null && cursor.moveToFirst()) {
-            String userId = cursor.getString(0);
-            cursor.close();
-            return userId;
-        }
-        return null;
-    }
 
     public Cursor getCollectionId(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -242,6 +231,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getItemsByCollectionId(String folderId) {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM item WHERE folder_id=?", new String[]{folderId});
+
+
     }
 
 
@@ -252,7 +243,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
         return stream.toByteArray();
     }
 
@@ -264,14 +255,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean updateitem(int id,String name,String value,byte[] img,String collection){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id", id);
+
         contentValues.put("name", name);
         contentValues.put("value", value);
         contentValues.put("Image", img);
         contentValues.put("folder_id", collection);
         int result = db.update("item", contentValues, "id=?", new String[]{String.valueOf(id)});
         db.close();
-        return result !=1;
+        return result ==1;
 
     }
 
